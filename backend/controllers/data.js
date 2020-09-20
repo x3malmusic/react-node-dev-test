@@ -1,4 +1,5 @@
 import { asyncHandler } from "../middleware/async";
+import { User } from "../models/User";
 import axios from "axios";
 
 export const getCards = asyncHandler(async (req, res) => {
@@ -12,9 +13,11 @@ export const getCards = asyncHandler(async (req, res) => {
 });
 
 export const saveList = asyncHandler(async (req, res) => {
-  const { list } = req.body;
+  const { savedList, email } = req.body;
 
-  console.log(list);
+  if (savedList.length) {
+    await User.findOne({ email }).updateOne({ savedList });
+  } else await User.findOne({ email }).updateOne({ savedList: [] });
 
   res.status(200).send();
 });

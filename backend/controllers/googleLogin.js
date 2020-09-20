@@ -24,12 +24,14 @@ export const login = asyncHandler(async (req, res, next) => {
     const candidate = await User.findOne({ email });
 
     if (candidate) {
-      const { email, firstName, lastName, avatar } = candidate;
+      const { email, firstName, lastName, avatar, savedList } = candidate;
+      console.log("wtf???", candidate);
       return res.send({
         email,
         firstName,
         lastName,
         avatar,
+        savedList,
         loggedIn: true,
         tokenId,
       });

@@ -8,6 +8,6 @@ router.get("/", getCards);
 
 router.post("/googlelogin", login);
 
-router.post("/savelist", saveList);
+router.put("/savelist", saveList);
 
 export default router;

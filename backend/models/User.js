@@ -5,7 +5,7 @@ const userSchema = new Schema({
   firstName: { type: String },
   lastName: { type: String },
   avatar: { type: String },
-  savedList: [{}],
+  savedList: [],
 });
 
 export const User = model("User", userSchema);
