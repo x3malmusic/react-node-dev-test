@@ -4,3 +4,68 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.card {
+  width: 100%;
+  text-align: center;
+
+  &:first-child{
+    margin-top: 0;
+  }
+
+  .btn {
+    width: 50%;
+    margin: 0 auto 15px auto;
+  }
+}
+
+.placeholder {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.drop {
+  padding: 15px;
+  background-color: #00ffed;
+  width: 400px;
+}
+
+.error {
+  text-align: center;
+  color: red;
+  font-size: 8rem;
+}
+
+.modal-body {
+  height: 400px;
+  overflow-y: auto;
+
+  .post {
+    transition: transform .2s ease-in-out;
+    padding: 5px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.navbar {
+  gap: 10px;
+
+  h3 {
+    color: #ccc;
+    margin-right: 10px;
+  }
+
+  img {
+    max-width: 43px;
+  }
+}
+

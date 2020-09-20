@@ -3,9 +3,12 @@ import dotenv from "dotenv";
 import cors from "cors";
 import { errorHandler } from "./middleware/error";
 import routes from "./routes";
+import { connectDB } from "./database";
 
 const app = express();
 dotenv.config();
+
+connectDB();
 
 const port = process.env.PORT || 8000;
 
