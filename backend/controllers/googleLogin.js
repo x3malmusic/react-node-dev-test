@@ -25,7 +25,6 @@ export const login = asyncHandler(async (req, res, next) => {
 
     if (candidate) {
       const { email, firstName, lastName, avatar, savedList } = candidate;
-      console.log("wtf???", candidate);
       return res.send({
         email,
         firstName,
