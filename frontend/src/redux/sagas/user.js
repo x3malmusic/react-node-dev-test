@@ -1,10 +1,12 @@
 import { takeLatest, put } from "redux-saga/effects";
+
 import {
   LOGIN_USER,
   SET_USER,
   GET_DATA,
   SET_USERS_LIST,
   SET_POSTS,
+  SAVE_LIST,
 } from "../actions/types";
 import http from "../../services/http";
 
@@ -33,7 +35,19 @@ const getData = function* () {
   }
 };
 
+const saveList = function* ({ payload }) {
+  try {
+    yield http.put("/api/savelist", {
+      savedList: payload.savedList,
+      email: payload.email,
+    });
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 export default [
   takeLatest(LOGIN_USER, loginUser),
   takeLatest(GET_DATA, getData),
+  takeLatest(SAVE_LIST, saveList),
 ];

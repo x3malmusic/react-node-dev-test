@@ -7,3 +7,4 @@ export const LOGIN_USER = "LOGIN_USER";
 export const SET_USER = "SET_USER";
 export const SET_USER_ID = "SET_USER_ID";
 export const SORT_BY = "SORT_BY";
+export const SAVE_LIST = "SAVE_LIST";

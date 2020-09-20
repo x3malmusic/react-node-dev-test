@@ -10,3 +10,11 @@ export const getCards = asyncHandler(async (req, res) => {
 
   res.send({ usersList: response.data, posts: posts.data });
 });
+
+export const saveList = asyncHandler(async (req, res) => {
+  const { list } = req.body;
+
+  console.log(list);
+
+  res.status(200).send();
+});

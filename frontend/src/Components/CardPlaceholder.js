@@ -3,7 +3,7 @@ import { DragDropContext } from "react-beautiful-dnd";
 import DropList from "../Containers/DropList";
 
 function CardPlaceholder(props) {
-  const { list, setList, loggedIn } = props;
+  const { list, setList, loggedIn, saveList, email } = props;
 
   const move = (source, destination, droppableSource, droppableDestination) => {
     const sourceClone = [...source];
@@ -53,6 +53,12 @@ function CardPlaceholder(props) {
 
       setList[source.droppableId](result[source.droppableId]);
       setList[destination.droppableId](result[destination.droppableId]);
+
+      const savedList =
+        source.droppableId === "savedList"
+          ? result[source.droppableId]
+          : result[destination.droppableId];
+      saveList({ savedList, email });
     }
   };
 

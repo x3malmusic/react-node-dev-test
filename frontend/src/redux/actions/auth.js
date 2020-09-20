@@ -8,11 +8,17 @@ import {
   SHOW_MODAL,
   SET_USER_ID,
   SORT_BY,
+  SAVE_LIST,
 } from "./types";
 
 export const setUserId = (id) => ({
   type: SET_USER_ID,
   payload: id,
+});
+
+export const saveList = (list) => ({
+  type: SAVE_LIST,
+  payload: list,
 });
 
 export const sortBy = (filter) => ({

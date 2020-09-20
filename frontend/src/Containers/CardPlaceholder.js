@@ -1,11 +1,14 @@
 import { connect } from "react-redux";
-import { loginUser } from "../redux/actions/auth";
+import { saveList } from "../redux/actions/auth";
 import CardPlaceholder from "../Components/CardPlaceholder";
 
-const mapStateToProps = ({ user: { loggedIn } }) => ({ loggedIn });
+const mapStateToProps = ({ user: { loggedIn, email } }) => ({
+  loggedIn,
+  email,
+});
 
 const mapDispatchToProps = (dispatch) => ({
-  loginUser: (user) => dispatch(loginUser(user)),
+  saveList: (list) => dispatch(saveList(list)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardPlaceholder);
